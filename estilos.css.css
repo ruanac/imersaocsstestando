@@ -1,0 +1,260 @@
+!/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color:#132F2B;
+    background-size: auto 100vh;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 12px;
+    height: 100vh;
+}
+
+/* MOBILE */
+@media(min-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+}
+@media(min-width: 600px) {
+    body {
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 18px;
+    }
+}
+@media(min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+header {
+    align-items: center;
+    background-image: linear-gradient(rgba(19, 47, 43,.8), rgba(19, 47, 43,.8)), url(../img/bg.jpg);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+.menu {
+    background-color: #E9FDED;
+    border-bottom: 5px solid #28CC9E;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+}
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+.menu li {
+    list-style: none;
+}   
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;
+}
+.menu a:active,
+.menu a:hover {
+  background-color: #28CC9E;
+  color: #E9FDED;
+}
+a {
+    color: #28CC9E;
+    text-decoration: none;
+}
+
+.titulo {
+    animation: 1s ease 500ms animacaoTitulo forwards;
+    opacity: 0;
+    transform: scale(0.2) translateY(50vh);
+}
+@keyframes animacaoTitulo {
+    from {
+        opacity: 0;
+        transform: scale(0.2) translateY(50vh);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        }
+}
+
+.site-title, 
+.site-subtitle {
+    color: #E9FDED;
+    text-align: center;
+}
+.site-title {
+    font-size: 4em;
+}
+.site-subtitle {
+    font-style: italic;
+    line-height: 1.8em;
+}
+.sobre,
+.contato,
+.portfolio {
+    padding: 2em;
+    
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+@media (min-width: 1200px) {
+    .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+*/
+
+main {
+    background-color: #E9FDED;
+    border-top: 5px solid #28CC9E;
+    border-bottom: 5px solid #28CC9E;
+    width: 100%;
+
+}
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+    color: #28CC9E;
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+.sobre p {
+    color: #132F2B;
+    margin-bottom: 1.4em;
+    text-align: justify;
+    
+}
+.sobre a {
+    color: #28CC9E;
+}
+.sobre a:hover {
+    font-size: 1.2em;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.8s;
+  }
+.sobre .avatar {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin-left: 2em;
+}
+@media (min-width: 600px) {
+    .sobre .avatar {
+        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+        float: right;
+    }
+}
+.sobre .avatar img {
+    width: 210px;
+}
+
+section {
+    border-top: : 5px solid #E9FDED;
+}
+.portfolio .grid {
+    display: grid;
+    gap: 2em;
+    padding-bottom: 50px;
+}
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;
+    }    
+}
+@media (min-width: 880px) {
+    .portfolio .grid {
+        align-content: center;
+        grid-template-columns: repeat(3, 260px);
+        justify-content: center;
+    }    
+}
+.flip-card {
+    height: 180px;
+    perspective: 500px;
+}
+.flip-card:hover .card {
+    background: #28CC9E;
+    color: #E9FDED;
+    height: 180px;
+    transform: rotateY(180deg);
+    width: 100%;
+    border-radius: 10px;
+}
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+}
+.card-front, 
+.card-back {
+    backface-visibility: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
+.card-back {
+    border: 2px solid #E9FDED;
+    border-radius: 10px;
+    color: #E9FDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(40, 204, 158, .7);
+    height: 180px;
+    width: 100%;
+    transform: rotateY(180deg);
+}
+.portfolio figure {
+    text-align: center;
+
+}
+.img-portfolio {
+    border: 2px solid #E9FDED;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+    object-position: left bottom;
+    transition: transform 500ms;
+    width: 100%;
+}
+
+footer {
+    background-color: #E9FDED;
+    border-top: 5px solid #28CC9E;
+    width: 100%;
+}
+
+.contato .icons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.contato a {
+    color: #28CC9E;
+    font-size: 3em;
+    transition: text-shadow 1s;
+}
+.contato a:active,
+.contato a:hover {
+    font-size: 4em;
+    color: #E9FDED;
+    text-decoration: none;
+    text-shadow: 10px 0px 10px rgba(40, 204, 158, 10);
+    transition: 0.8s;
+}
